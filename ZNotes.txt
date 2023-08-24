@@ -1,0 +1,43 @@
+1. Order of Links of scripts in index.html matters alot 
+    They should be 
+    1.react.development
+    2.react-dom.development
+    3.script.js
+
+2.createElement is an object with tag(name of tag), attribute and children
+3.render method creates a html of given object and puts up that html into root .
+    It replaces everything within root div .
+    It does not appends but replaces .
+
+4.ReactElement(object) => HTML(Browser Understands)
+
+5.React is just js library and we can apply or use react anywhere on website like 
+    only in header or only in footer just by render a react element into that class or id.
+    - Anything other than that class or id will be applicable 
+      LIKE we in oure code only targetting root element but code other than root element can be applicable 
+      which can be on top or below of root element.
+    -Like this react gives us freedom to use it anywhere in code base unlike framework where whole package comes 
+     and we need to use that package.
+
+6.[
+                React.createElement(
+                    "h1",
+                    {id:"heading"},
+                    "I am h1 tag of child1!"
+                ),
+                React.createElement(
+                    "h1",
+                    {id:"heading"},
+                    "I am h1 tag of child2!"
+                )
+    ]
+    In createElement method if we want more than one child then we can use array.
+
+7.There are two CDN links 
+    1. for development
+    2. Production
+
+8. Use of crossorigin - In ReactJS, Cross-Origin Resource Sharing (CORS) refers to the method that 
+    allows you to make requests to the server deployed at a different domain.
+     As a reference, if the frontend and backend are at two different domains, we need CORS there. 
+
