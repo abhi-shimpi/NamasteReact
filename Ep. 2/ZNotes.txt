@@ -1,0 +1,10 @@
+1. Difference between git and github
+   - Git is a version control system that allows developers to track changes in their code.
+        GitHub is a web-based hosting service for git repositories. 
+        In simple terms, you can use git without Github, but you cannot use GitHub without Git. 
+   - Git is s/w , github is service
+   - git is cl tool , github GitHub
+   - Git is a version control system to manage source code history. , GitHub is a hosting service for Git repositories.
+   - Git is focused on version control and code sharing. , GitHub is focused on centralized source code hosting.
+
+2.package.json is configuration for npm 
