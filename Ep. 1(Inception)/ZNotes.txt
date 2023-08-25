@@ -41,4 +41,13 @@
     allows you to make requests to the server deployed at a different domain.
      As a reference, if the frontend and backend are at two different domains, we need CORS there. 
 
+9.  1. createElement - this method creates an element . It is an object contains
+ 	type of element 
+ 	attribute - like id ..etc
+ 	children - content within element
+ 
+    2.createRoot -  create root element
+    3. When anything appears or disappers it's becz node is bening deleted and attached to DOM tree so main focus of every framework 
+        or library is to munipulate this DOM using JS
+    4.render - this method takes elemtn like in out case its heading , make html heading tag from it and put it into DOM 
 

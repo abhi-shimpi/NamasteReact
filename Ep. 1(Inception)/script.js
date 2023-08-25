@@ -1,4 +1,12 @@
+// const heading  = React.createElement(
+//     "h1",
+//     {id:"heading"},
+//     "Hello World from React!"
+// );  //Creating an element
 
+// const root  = ReactDOM.createRoot(document.getElementById('root'));  // Creating an root
+
+// root.render(heading) //appending heading inside root
 // <div id="parent">
     // <div id="child">
     //     <h1>I am h1 tag</h1>
