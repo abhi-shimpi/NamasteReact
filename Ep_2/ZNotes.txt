@@ -1,0 +1,147 @@
+1. Difference between git and github
+   - Git is a version control system that allows developers to track changes in their code.
+        GitHub is a web-based hosting service for git repositories. 
+        In simple terms, you can use git without Github, but you cannot use GitHub without Git. 
+   - Git is s/w , github is service
+   - git is cl tool , github GitHub
+   - Git is a version control system to manage source code history. , GitHub is a hosting service for Git repositories.
+   - Git is focused on version control and code sharing. , GitHub is focused on centralized source code hosting.
+
+2.package.json is configuration for npm - enlist depenceies we have for our project , dependencies = packages
+
+3.A bundler is a tool that takes all your JavaScript code, along with any other assets like CSS or images, and
+   combines them into a single file (or a few files) that can be served to the browser.
+
+   This process is crucial because it helps to optimize your application for production. It reduces the number 
+   of HTTP requests the browser has to make, and it can also minify your code, eliminating unnecessary characters
+   to make your files smaller.
+
+   -import React from 'react';
+        import ReactDOM from 'react-dom';
+    
+        function App() {
+          return (
+            <div>
+              <h1>Hello, world!</h1>
+            </div>
+          );
+        }
+    
+        ReactDOM.render(<App />, document.getElementById('root'));
+      
+   -It would also transform the JSX into JavaScript, resulting in something like this:
+
+        'use strict';
+    
+        var React = require('react');
+        var ReactDOM = require('react-dom');
+    
+        function App() {
+          return React.createElement(
+            'div',
+            null,
+            React.createElement(
+              'h1',
+              null,
+              'Hello, world!'
+            )
+          );
+        }
+    
+        ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
+
+   -Secondly, a bundler can minify your code, removing unnecessary characters like spaces
+    and comments, making your files smaller and faster to download.
+
+   -Thirdly, a bundler can transpile your code, transforming newer JavaScript features into 
+    older syntax for better browser compatibility. This is especially important in React, where 
+    we often use JSX and ES6+ features that aren't supported in all browsers.
+
+4. There two types of dependencies
+   a. normal dependencies 
+      - Dependency is an object that contains the library, which your project requires for production 
+         environments and functioning effectively. 
+      -You require these packages to test and run your project on the localhost. 
+      -You can add dependencies to the package.json file by running the below command: 
+
+         npm install <dependencies> 
+   b. dev dependencies
+      - devDependencies are those packages in the package.json file that you need only for project 
+         development purposes. Example- Babel, Webpack, etc. 
+      -These types of dependencies are required during the web application development process but 
+         not while testing or executing it.  
+      -For adding devDependencies to your project, run the below command: 
+
+         npm install -D <dev_dependencies> --save-dev 
+      
+5.Use of tilde and caret 
+
+   - tilde -> patch upgrade ->  ~3.9.3 -> 3.9.*
+   - caret -> minor and patch upgrade -> ^3.9.3 -> 3.*.*
+   If you don't mention any of the above ,it will not upgrade for major version. But adding ^ is reccomended.
+
+6.If we don't have package.json in our project then while installling any package it automatically creates packag-lock.json in project
+
+7. https://www.atatus.com/blog/package-json-vs-package-lock-json/#:~:text=json%20is%20backward%2Dcompatible%20with,only%20install%20the%20upgraded%20version).
+
+8.Difference between package.json and package.lock.json 
+
+   - package.json is configuration of packages like its metadata of depenceies
+   - while package-lock.json maintains exact version of each depenceies and also assures that each depenceies has same 
+      version accross all environments like dev and production.  It records the exact version of every installed dependency, including its 
+      sub-dependencies and their versions.
+   -Also when user 1 share his project with user 2 , the version of all depenceies should be same for both users , which is maintained by 
+      package-lock.json , which avoids conflicts and errors due to different versions.
+   
+9. You need to push package.json and package-lock.json on github but node_modules as you can install these node-modules by using package.json
+   and package-lock.json.
+
+10. Aquiring knoweledge - Have curosity about each and every thing.
+
+11. npm - command for installling any package 
+    npx - command to excute any package
+
+12. CDN links is one way to add React in our app , but its not a prefered way to add react in our app .
+    -Because when we access react through CDN it makes network call which increases timing.
+    -Also if react version changes then everytime we need to change that CDN links .
+
+13.Parcel is such a beast - https://parceljs.org/
+
+   - we use type='module' to basically tell that this file should be exported as module
+
+   -Local server -> Build your project and host that build on local server
+   -HMR -> Hot Module Reloading( Which uses c++ algorithm) -> When you make a change, Parcel automatically 
+      updates your code in the browser.
+   -Diagnostics
+   -Caching -> Everything Parcel does is cached – transformation, dependency resolution, bundling, optimizing, and everything in between.
+       This means the dev server restarts instantly, and the same code is never built twice.
+   -Lazy dev builds -> In development, Parcel can defer building files until they are requested in the browser. This means you only need to wait 
+      for the page you're actually working on to build! If your project has many entries or code split points, this can massively reduce dev server 
+      startup time.
+   - Tree Shaking  -> Parcel supports tree-shaking both ES modules and CommonJS out of the box! It statically analyzes the imports and exports 
+      of each module, and removes everything that isn't used.
+   
+   -Image optimization 
+
+   -Compression
+
+   -Differential Bundling -> Gives support to old browser
+
+14.BrowsersList - Takes list of browsers which can support your website.
+
+15.Prod buid  - npx parcel build index.HTML
+   - For dev build we don't need to do it explicitly , it will be done we run npx parcel index.html
+   - Dev and prod build are not needed to push on Github as they can be recreated.
+   - Cycle is 
+      a. We push local code on github
+      b. Prod server takes code from github 
+      c.Intalls node_modules as we have package.json and package-lock.json . Copy of node_modules on local and prod are different .
+      d.Server also has its own prod dist file which get served on prod.
+
+
+16. Conflicts of version of packages - https://www.geeksforgeeks.org/how-does-npm-handle-version-conflicts/
+
+
+
+
+   

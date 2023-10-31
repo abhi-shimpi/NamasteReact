@@ -1,0 +1,74 @@
+1. What is NPM 
+    NPM is js package manager which manages all packages used by js 
+
+2.What is Parcel 
+    Parcel is a js bundler which is used by react to convert js, html, css , images and all assets in a single file to optimise 
+    your code and to lesser http requests
+
+    we need parcel for -
+    a. optimization
+    b. Lazy Loading
+    c. Minification
+    d. Tree Shaking
+    e. Faster builds
+    f. Differential bundling
+
+3.parcel-cache 
+    parcel-cache contains binary files which contains metadata of builds which help in reducing time for further builds.
+
+4.npx
+    npx is used to execute any package
+
+5.Difference between depenceies and devDependencies
+    -depenceies contains those packages which are required for production environment.
+    -These depenceies are used for executing and testing the code on localhost.
+    -These are installed by running the command 
+        npm install -D <depenceies>
+    
+    -While devDependencies contains those packages which are used for development purpose.
+    -These are not used for executing and testing code .
+    - These are installed by running the command 
+        npm install <devDependencies>
+
+6.Tree shaking 
+    - It means removing the unnecessary code and spaces from code to optimise the code.
+
+7.Hot Module Replacement
+    -HMR means parcel has c++ algorithm which detects changes in our code reflect those changes 
+        intermediately after saving them on localhost.
+
+8.
+
+9..gitignore 
+    This file is used to add those files of project which should not be pushed on github.
+    -We should add files like node_modules , parcel cache, dist ... etc files which can be 
+        recreated.
+    -We should not add files packag.json and package-lock.json
+
+10.package.json vs. package-lock.json 
+    -package.json is a configuration for all packages required in project
+    -It contains metaData of all dependencies along with metadata of project like name , author ,discription etc.
+
+    -package-lock.json is a file which maintains exact version of all dependencies required within project.
+    -It assures that versions of all dependencies and their subdependencies should be same across all environments.
+    -Also when user 1 share his code base to user 2 its package-lock.json that maintains same of versions of all packages 
+        across both users and avoids version conflicts and errors.
+
+11.Not Modifying `package-lock.json
+    -As package-lock.json is created by npm and it maintains exact version of all dependencies, so any changes in
+    package-lock.json can lead to inconsistency and conflicts due version of dependencies.
+
+12.What is node_modules 
+    -node_modules contains the data of all dependencies which are mentioned in the package-lock.json file.
+    -We should not push node_modules on git as them can be recreated by whenever required with help of package-lock.json.
+
+13.Dist folder
+    -dist folder contains build of our project which is served to browser
+    -It contains single html , css and js file of whole code .
+
+14.BrowsersList 
+    -In this list we can mention the version of browser on which our app should run.
+
+15. ^ and ~
+    - ^ is used for minor update 
+    - ~ is used for patch and bug fixes update
