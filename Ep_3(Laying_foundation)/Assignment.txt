@@ -1,0 +1,31 @@
+1.What is JSX 
+    -JSX stands for JavaScript and XML
+    -JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file.
+    -JSX is allows you to write html like syntax in react which at the end create React Element.
+    -JSX is an extension of js language based on ES6 and is translated into regular js code at runtime.
+
+2.SuperPowers of JSX
+-It is faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+-It allows to html like syntax to create react element which makes code more readable.
+-As JSX is an expression, we can use it inside of if statements and for loops, assign it to variables, 
+    accept it as arguments, or return it from functions.
+-Component -> React uses divides web-page into component . So JSX which is combination of js and html make code 
+                more reusable across the web-app.
+
+3. Type in script -
+    -The type attribute of the <script> element indicates the type of script represented by the element: 
+        a classic script, an import map, a JavaScript module, speculation rules, or a data block.
+4.Difference
+    -{TitleComponent} can be react element or variable.
+
+    -{<TitleComponent/>} - This is a self-closing tag or a "void element" in JSX. It is used when you have a component 
+        that doesn't have any children or content to place between opening and closing tags.This is often used for stateless 
+        functional components or components that don't need any children.
+
+    -{<TitleComponent><TitleComponent/>} - This is a regular opening and closing tag, and it is used when your component needs 
+        to enclose other JSX elements or components within it. 
+        <Title>
+            <h1>My Title</h1>
+        </Title>
+    -Both of these syntaxes ultimately create a React component,
+    

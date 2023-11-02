@@ -1,0 +1,82 @@
+1. npx parcel index.HTML
+  -npx for executing package
+  -parcel name of package which we want to execute
+  -index.html source file 
+
+2.npm start = npm run start 
+  -behind scenes it executes our package parcel with index.html because we have configured it
+    in script.js
+
+3.JSX is used to creates html element using js
+
+4.JSX and React are both different.JSX is not part of react and we can develope React app
+  without using jsx also.
+
+5. JSX is not html is js . Its a html like syntax in js
+
+6. Question - if jsx is not part of react then from where its coming .I mean we are not importing it anywhere 
+              then how can we use it?
+   - Because the jsx we are writting till now is not pure jsx 
+   - That means when we write jsx code then it get transpiled by babel into the code which 
+      browser and js engine can understand 
+   -so parcel is managing all this transpilation when we write jsx code and we need not to import jsx.
+   Babel job is to convert jsx into react understandable code
+
+7.React.createElement => ReactElement - JSObject => HTMLElement(render);
+  JSX => React.createElement => ReactElement - JSObject => HTMLElement(render);
+
+8.Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of 
+  JavaScript in current and older browsers or environments. Here are the main things Babel can do for you:
+
+  -Transform syntax
+  -Polyfill features that are missing in your target environment (through a third-party polyfill such as core-js)
+  -Source code transformations (codemods)
+
+  -Makes js Backward compitable
+  -It converts new versioned js code into old js syntax so that browsers can support your code 
+  -Stable old version supported everywhere
+  
+9.You need use camelCasing while creating element and attribute in JSX.While creating component we use PascalCase.
+
+10. HW -Various attribute in JSX
+
+11. If you want to write jsx in multiple lines you need write it within round bracket.
+
+12. <h1>React is {5 + 5} times better with JSX</h1> => {5+5} is an expression
+
+13.https://www.w3schools.com/react/react_jsx.asp
+
+14.what and  Why we use JSX -
+  - JSX is an extension of the JavaScript language based on ES6, and is translated into regular JavaScript at runtime.
+  -Without using jsx and only using React we can build react app but code readablity is very 
+    hard while creating html element.
+  -So here JSX comes into picture it gives feature to write HTML like syntax in JS which make 
+    developers life more easier.
+  -It is faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+
+15.https://www.geeksforgeeks.org/reactjs-jsx-introduction/
+
+16.What is component and its types->
+  a.Class based component
+  b.Functional component - A function that returns a JSX code/ React element is functional component
+
+17.PascalCase for Naming functional component
+
+18.Component composition - adding component within another component 
+
+19. {} -> in this we can write any JS code -> This will also take care of cross site attacks which is taken care by JSX
+    -Basically JSX will not blindly add any data coming from bad api request .It will sanitize that data so we can add any
+      data inside {}
+
+20. Your web-app is readable bcz of JSX not react
+
+21.Is babel dependend on parcel or viceversa
+   -How parcel manages babel?
+
+22.JSX will throw an error if the HTML is not correct or if there are multiple child elements without a parent element.
+
+23.JSX and React are two separate things. They’re often used together, but you can use them independently of each other. 
+  JSX is a syntax extension, while React is a JavaScript library.
+
+https://react.dev/learn/writing-markup-with-jsx
+https://www.w3schools.com/js/js_modules.asp

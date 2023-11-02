@@ -1,0 +1,31 @@
+{
+  "name": "ep_2",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhi-shimpi/NamasteReact.git#master"
+  },
+  "author": "Abhishek Shimpi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhi-shimpi/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/abhi-shimpi/NamasteReact/tree/master#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist" : [
+    "last 2 version"
+  ]
+}
