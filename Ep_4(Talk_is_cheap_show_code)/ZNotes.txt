@@ -1,0 +1,91 @@
+1.Before writting any code planning is important as it makes coding easy
+
+2. Create wirframe first
+
+3. We can also write inline style in JSX like
+    <div style={
+        {
+            backgraoundColor : "#f0f0f0"
+        }
+    }
+    or
+    const styleObj =  {
+            backgraoundColor : "#f0f0f0"
+        }
+    <div style={styleObj}
+
+4.Props - shorthand for properties . Just noraml argument to function.
+    - When you have to dyanamically pass in data to component , you pass it through props.
+
+5.Config driven UI - the website UI is driven By data/config .
+    -Like for zomato carusel and card will be diferent for different cities.
+    -In a configuration-driven UI, the layout, styles, and other properties of UI
+     elements are defined in a configuration file or database, which can be easily 
+     modified without requiring changes to the codebase. This approach makes it easier 
+     to customize the UI for different use cases or user groups, without the need for extensive coding.
+    -The configuration file or database may also define the data sources and the data to be displayed in 
+     the UI, as well as the interactions and behavior of the UI components. This allows for greater flexibility 
+     and adaptability of the UI to different use cases, as the configuration data can be easily modified or 
+     replaced without affecting the underlying application logic
+
+6.You should know what will come in API response to become a good fronted eng.
+    - Why this data is coming
+    -knoweledge of API
+    -UI Layer and Data Layer
+
+7. ? - Optional chaining
+
+8.key in map - We need to give key in map for unique identification of each item.
+ - Like in react if we dont give key then it will rerender every item whenever a new item get added in data as it 
+    will consider all items as same.
+ -But if we gives a key then react knows the items which were already there and it will render only newly added item.
+
+9.Learn about destructuring and spread operator
+
+10.To help you decide, I put together three conditions which these examples have in common:
+
+    the list and items are static–they are not computed and do not change;
+    the items in the list have no ids;
+    the list is never reordered or filtered.
+
+11. Why we should not use index as key , just to simple explaination
+    -Suppose you are showing a form having two inputs names foo and bar 
+    -You have implemented a functionality of adding new input at start of a list .
+    - When you assign some value say abc to input name foo and then click on add inout in begining 
+        so what we expect after adding new input in begining that 'abc' value should kept assigned to foo as before.
+    -But in case of index React will assign that 'abc' to newly added input because it considers item which was on 0th index 
+        before was the same item now after adding new item in list.
+
+12.Config driven UI -
+    -In config driven UI , the layout , styles and other properties of UI elements are 
+        defined in config or database , which can be easily modified without doing changes in codebase.
+        This approach makes it easier to customize UI for different use cases without any need of extensive coding.
+    -We have implemented config driven UI in our Telefonica project.
+    -We have created a form which takes Title,width,sequence , GroupName and subgroup name as an input .
+      It has other inputs like type (stack,pie,map,chromatic map etc),then color of that widget and reportname of API for that particular widget.
+      It also has input for customData of that widget which somtimes include range and color for legends.
+    -So after saving all this data, it get saved in db. 
+    -Here for every UC we are maintaining a dashboard ID.So all these widgets will get stored against that particular dashboardId only.
+    -So to show saved widgets on UI we just need to hit get api of widgets for that dashboardId and show those widgets according 
+        to the config.
+    -So if we need to change any widget and nedd to delete any widget we can do it through UI only . No need to do any 
+        exensive coding.
+https://iamrajatsingh1.medium.com/config-driven-ui-c8e93b730993
+https://portal.gitnation.org/contents/config-driven-ui-using-reactjs
+
+13.As defined in Wikipedia, a mixin is a class containing methods that can be used by other classes without a need 
+    to inherit from it.
+    -In other words, a mixin provides methods that implement a certain behavior, but we do not use it alone, we use 
+        it to add the behavior to other classes.
+
+14.We can use react without ES6 - https://legacy.reactjs.org/docs/react-without-es6.html#mixins
+
+15. <React.fragment> - https://legacy.reactjs.org/docs/fragments.html
+
+Reamined 
+-Virtual dom
+-Reconcilliation in react
+-React fibre
+
+https://legacy.reactjs.org/docs/react-without-jsx.html
+https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/

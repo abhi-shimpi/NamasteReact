@@ -1,0 +1,101 @@
+1. We can do everything with HTML,css and js that react does.
+
+2.But Difference comes at - 
+    -developers experince is so smooth with react
+    -you build large scale application with less code compared to html,css & js application
+    -react optimises our app using its superpowers.
+
+3.Best practice - to keep all code in src folder
+ -Make separate file for each component
+ -Name of component should be same as file name or viceversa
+ -if you write only like Header while importing instead of Header.js , react will consider it as js file
+ -Never ever keep hardcoded data in component file
+
+4.Types of imports and export 
+    1.Named import/export -
+        - Here we can export multiple component , element etc and also can import multiple things from that export.
+        - We need to use {} for getting exact value of named export while importing it.
+        -
+    2.default import/export
+        -default export then default import (give error for {})
+        -We cant use {} while importing default export.
+        -The naming of import is completely independent in default export and we can use any name we like.
+
+Main Difference :
+-Default exports are used to export a single "main" value from a module, 
+    while named exports allow us to export multiple values with specific names.
+-Default exports allow us to import the exported value with any name in the importing module, 
+    while named exports require us to use the exact exported names when importing.
+-We can have only one default export per module, 
+    but we can have multiple named exports.
+-Default exports are often used for the most important or commonly used value from a module, 
+    while named exports are used for various smaller values that need to be imported independently.
+
+
+5. React is fast in DOM Munipulation like it can add and delete any node quickly so that your 
+    data layer and UI Layer should be in sync/ consistent/ tied.
+
+6.Hooks - Normal JS functions
+
+-useState -> To create a state variable.
+    whenever a state variable changes react rerenders a component.
+
+7.What makes our react app fast -> Its react superpower of DOM Munipulation or DOM Operation
+    -It keeps UI layer in sync with data layer
+
+8.Reconcilliation algorithm (React fibre)
+
+9.Virtual DOM  - It is representation of actual DOM.
+    -Just console log any component . You will get an object which is nothing but a virtual DOM 
+        which react keeps with it.
+
+10.Why react is fast 
+    -React has virtual DOM .I has diffing algorithm which can efficiently do DOM Munipulation and  which can quickly find out 
+        Difference between two virtual DOM and update UI.
+
+11.React keep an eye state variable and contineously checks if it has changes or not and as soon as we call setListOfRestaurents
+    function reacts diff algorithm start working and find out difference between previous VDOM and current VDOM.
+
+    - Thats why they have defiened second varaible which is function so that when we call that function react will get
+        trigger and it start it's DIFF algorithm to work to find out out difference between two VDOM
+
+    let [listOfRestaurents,setListOfRestaurents] = useState(respData)
+
+   - useState(respData) - returns us an array and here we are destructuring it.
+     we can also write it like  -
+        const arr = useState(respData);
+        const listOfRestaurents = arr[0];
+        const setListOfRestaurents = arr[1];
+
+12. An element is a plain object describing a component instance or DOM node and its desired properties. 
+
+13.An element is a plain object describing what you want to appear on the screen in terms of the DOM nodes or other components. 
+    Elements can contain other elements in their props. Creating a React element is cheap. Once an element is created, it is never mutated.
+
+    -A component can be declared in several different ways. It can be a class with a render() method. Alternatively, in simple cases, 
+    it can be defined as a function. In either case, it takes props as an input, and returns an element tree as the output.
+
+    -When a component receives some props as an input, it is because a particular parent component returned an element with its type and these props. 
+     This is why people say that the props flows one way in React: from parents to children.
+    -An instance is what you refer to as this in the component class you write. 
+        It is useful for storing local state and reacting to the lifecycle events.
+
+    -Function components don’t have instances at all. Class components have instances, 
+        but you never need to create a component instance directly—React takes care of this.
+
+    -Finally, to create elements, use React.createElement(), JSX, or an element factory helper. 
+        Don’t write elements as plain objects in the real code—just know that they are plain objects under the hood.
+
+14.What is reconciliation - The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+https://legacy.reactjs.org/docs/reconciliation.html - important
+https://github.com/acdlite/react-fiber-architecture - VVIMP
+https://legacy.reactjs.org/docs/faq-internals.html
+
+coding - 
+https://codedamn.com/news/reactjs/if-else-statements-in-jsx
+
+
+TO DO -
+1.Proper defination of react hook and it explaination in your own words
+2.same for useState hook

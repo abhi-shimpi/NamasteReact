@@ -14,7 +14,7 @@
 5.React is just js library and we can apply or use react anywhere on website like 
     only in header or only in footer just by render a react element into that class or id.
     - Anything other than that class or id will be applicable 
-      LIKE we in oure code only targetting root element but code other than root element can be applicable 
+      LIKE we in our code only targetting root element but code other than root element can be applicable 
       which can be on top or below of root element.
     -Like this react gives us freedom to use it anywhere in code base unlike framework where whole package comes 
      and we need to use that package.
@@ -47,7 +47,18 @@
  	children - content within element
  
     2.createRoot -  create root element
-    3. When anything appears or disappers it's becz node is bening deleted and attached to DOM tree so main focus of every framework 
-        or library is to munipulate this DOM using JS
-    4.render - this method takes elemtn like in out case its heading , make html heading tag from it and put it into DOM 
+    3. When anything appears or disappers it's becz node is being deleted and attached to DOM tree so main focus of every framework 
+        or library is to munipulate this DOM using JS (But it costelier operation)
+    4.render - this method takes elemnt like in out case its heading , make html heading tag from it and put it into DOM 
 
+10. The primary purpose of a content delivery network (CDN) is to reduce latency, or reduce the delay in communication created by 
+    a network's design. Because of the global and complex nature of the internet, communication traffic between websites (servers)
+    and their users (clients) has to move over large physical distances. The communication is also two-way, with requests going from 
+    the client to the server and responses coming back.
+    
+    A CDN improves efficiency by introducing intermediary servers between the client and the website server. These CDN servers manage some 
+    of the client-server communications. They decrease web traffic to the web server, reduce bandwidth consumption, and improve the user 
+    experience of your applications.
+
+11.When you use JSX, you must start a tag with a capital letter to render your own custom component. In other words, <Something /> is equivalent 
+    to createElement(Something), but <something /> (lowercase) is equivalent to createElement('something')

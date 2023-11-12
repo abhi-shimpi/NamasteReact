@@ -1,0 +1,12 @@
+1.Every time my component get rendered useEffect will be called if no dependency array present.
+2.If empty dependency array [] present then => useEffect will be called only once while initial render.
+3.If dependency is on say authenticityBtn then whenever authenticityBtn will get updated , useEffect will
+    get called
+4.Don't declare hooks outside of component it makes no sense as whenever our component will get
+    re-rendered it wont be called or updated.
+5.Always decalre hooks at top of your code in component Body.
+6.Don't declare hooks in if else or for loop or function.
+
+7.ReactProvider actually provides routes/routing configuration to our app 
+
+8.Function starting with use is a hook , its a comman convention in react industry

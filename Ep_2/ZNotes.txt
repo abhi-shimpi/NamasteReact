@@ -141,6 +141,8 @@
 
 16. Conflicts of version of packages - https://www.geeksforgeeks.org/how-does-npm-handle-version-conflicts/
 
+https://github.com/NIKHIL-1905-Y/React.Dev/blob/master/IgnitingApp/Notes.txt  and also offiline notes
+
 
 
 

@@ -71,7 +71,7 @@
 20. Your web-app is readable bcz of JSX not react
 
 21.Is babel dependend on parcel or viceversa
-   -How parcel manages babel?
+   -If yes then How parcel manages babel?
 
 22.JSX will throw an error if the HTML is not correct or if there are multiple child elements without a parent element.
 
@@ -80,3 +80,6 @@
 
 https://react.dev/learn/writing-markup-with-jsx
 https://www.w3schools.com/js/js_modules.asp
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+https://legacy.reactjs.org/docs/react-without-jsx.html

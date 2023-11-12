@@ -1,0 +1,22 @@
+1.Is there need of parcel in react?
+2.Can we use parcel in normal html,css js ?
+
+
+
+
+
+
+
+
+
+
+Notes----------------->
+1.While passing props , name of props on left side in parent component
+    should be same as name of reciving props in child component.Name of 
+    data on right side which is an arguments can be same , not mandatory.
+
+2.We can also do two way data passing in react like we did in SearchComponent.
+    where we are passing a function as props form parent component and reciving 
+    that function child comp as props then doing some action and passing a argument 
+    to that function which get received in same function(like onSearchRest) in
+    parent component.

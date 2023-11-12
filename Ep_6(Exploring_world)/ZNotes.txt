@@ -1,0 +1,49 @@
+1.Two types of arichitecture 
+    - Monolith architecture
+    - Microservice architecture - seperation of concerns follows single responsibility principle
+
+2.useEffect - takes two arguments one is callback fn and second one is dependency array
+    -Callback fn will be called after component renders 
+    -Body component will be rendered and then useEffect will be called
+
+3.shimmer UI
+
+4.Rules of hook
+
+Hooks are JavaScript functions, but they impose two additional rules:
+
+Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
+Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions. (There is just one other valid place to call Hooks — your own custom Hooks. We’ll learn about them in a moment.)
+
+5.Conditional rendering  - rendering on basis of condition 
+    -shimmer UI 
+
+6.If you want your component dynamic , js varaible doesn't work here for updation bcz react 
+    will not know if that varaible get updated or not.
+  - So we need to use useState to make that varaible special so that we want 
+    to update that variable we will call function which is second varaible of useState ,
+    will pass new updated value and react will run its reconciliation algorithm to 
+    diff between previous VDOM and current VDOM and then re-render that component with updated variables very quickly.
+  -React is re-rendering whole component(say header) after change.Just do console.log.
+  - So question comes if we see after clicking on login it only refreshes button element not other 
+    elements in that component this is because of diffing algorithm.As it diff between two 
+    VDOMs and only updates those elements which has changed and keeps elements those who haven't changed.
+ -re-render = calling it once again
+
+7.Again one question arrives - we have declared useState variable as constant then how is it 
+    possible to change its value doesn't it voilates basic principles of react ?
+    ANS - When we change value of any useState variable then as we know react re-renders that component
+            and now when it re-renders component then this useState variable is redeclared like 
+            the previous useState variable and variable after component get re-rendered are both different.
+            Thats why its possible to change value with constant variable.
+
+8.How , why and when/what
+
+9. The bug that we are facing when we have written value = {usestateVarianle} which is because 
+    when we typing any value or changing input value that searchInput useState variable value is 
+    not changing so we are seeing an empty input box even when we are typing somthing in it.
+  -SOL - we need to update searchInput variable when input value changes by calling onChange event handler.
+
+10.whenever state variable updates , react triggers its reconciliation cycle(re-renders the component)
+
+11.Two types of approaches - see ep_images
