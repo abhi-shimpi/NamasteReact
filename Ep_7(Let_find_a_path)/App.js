@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 import HeaderComponent from "./components/HeaderComponent";
 import {element,obj1} from "./components/HeaderComponent";
 import { RestaurantContainer } from "./components/RestaurantContainer";
-import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import About from "./components/About";
 import { Contact } from "./components/Contact";
+import {Error} from "./components/Error";
+import { RestaurentMenu } from "./components/RestaurentMenu.js";
 /* 
 1. Header
   -Logo
@@ -25,7 +27,7 @@ import { Contact } from "./components/Contact";
 const App = () => (
   <div className="homepage">
     <HeaderComponent />
-    <RestaurantContainer />
+    <Outlet/>
   </div>
 );
 
@@ -35,15 +37,25 @@ const appRouter = createBrowserRouter(
     {
       path:'/',
       element:<App></App>,
-      errorElement:<Error/>
-    },
-    {
-      path:'/about',
-      element:<About/>
-    },
-    {
-      path:'/contact',
-      element:<Contact/>
+      errorElement:<Error/>,
+      children: [
+        {
+          path:'/',
+          element:<RestaurantContainer/>
+        },
+        {
+          path:'/about',
+          element:<About/>
+        },
+        {
+          path:'/contact',
+          element:<Contact/>
+        },
+        {
+          path:'/restaurant/:resId',
+          element:<RestaurentMenu/>
+        },
+      ]
     }
   ]
 )

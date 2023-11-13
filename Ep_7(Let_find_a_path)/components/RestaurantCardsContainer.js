@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CardContainer from "./CardContainer";
 import { Shimmer } from "./Shimmer";
 
@@ -10,7 +11,9 @@ export const RestaurantCardsContainer = ({respData,keyData}) => {
 				respData?.length ? 
 				(
 					respData.map((restaurant) => (
-						<CardContainer key={restaurant.info.id} resData={restaurant.info}/>
+						<Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id}>
+							<CardContainer resData={restaurant.info}/>
+						</Link>
 					))
 				)
 				: (

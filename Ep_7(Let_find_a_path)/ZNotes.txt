@@ -10,3 +10,24 @@
 7.ReactProvider actually provides routes/routing configuration to our app 
 
 8.Function starting with use is a hook , its a comman convention in react industry
+
+9. Outlet in react-router-dom , link to provide link of page
+
+10. Types of routing 
+    -client side  - While in client side routing all these pages are already present in client side as 
+        components so when user clicks on say contact then browser just loads that Contact component and 
+        does not make  Network call only to fetch that page.
+    -server side - In server side routing , say we have home page,contact page, about page 
+        Now when we want to go to contact page then browser will make an API call to fetch that page from 
+        server. It will refresh whole page.
+
+11.SPA  - single page application
+    -Its just a single page just component getting interchanged via client side routing
+
+12.Dyanamic routing
+
+13.Speak while you code
+
+14.Query params - useParams hook
+
+15. https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode -IMP
