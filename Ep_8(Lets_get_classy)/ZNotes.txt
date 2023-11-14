@@ -1,0 +1,73 @@
+1.Class Based Components(old way to create component) but asked alot in interviews.
+
+2.A functional component is JS function which returns JSX .
+
+3.A class Based component is a class which exrends React.component and which has render method which returns a JSX.
+
+4.Why we use super(props)?
+
+5.When we are loading functional component that means we are calling that function.
+  When we are laoding class based component that means we are creating instance of that class.And once instance is created 
+   imidiately construcor will be called.
+
+6.Never update state variable like this
+    this.state.count = this.state.count + 1;
+
+7.this.state = {
+    count : 0,
+    count2 : 1
+}
+
+this.setState({count:2}) -> so here it will only update passed variable value and will not update other 
+                            state variables.
+
+8.Life cycle method -
+    Parent construcor called
+    Parent render called
+    Child constructor called
+    Child render called
+    Child componentDidMount called
+    Parent componentDidMount called
+
+    - So the above flow reflects the aproach two 
+      Loads component -> Renders its JSX -> Make API call into componentDidMount -> Re-render component with data
+
+    - We always make API call in componentDidMount because componentDidMount is called atlast after we render our component
+        onto DOM so it makes user not to wait for API call to get response and loads the the respective component 
+        onto DOM. This follows the approach of 
+
+        Loads component -> Renders its JSX -> Make API call into componentDidMount -> Re-render component with data
+
+    -Mounting means putting elements into DOM
+
+9.Refer to Lifecycle diagram 
+  - React lifecycle is divided into two phases 
+        1.Render phases - 
+            - In Render phase , construcor and render method will be called for 
+                1.parent 
+                2.child 1 then child 2 .....for every child
+            -React batches render phase of all children together.
+            -WHY react is doing that ? Why it is batching render phase of all Children together?
+                -because in render phase it will trigger reconciallition algorithm by diffing between 
+                    two VDOM and finalizing VDOM.
+                -As in next phase actual DOM will get updated and updation of atual DOM is very expensive task.
+                -So in render phase itself react diff algo finalizes VDOM to update actual DOM.
+        2.Commit phase -
+            -In commit phase,
+                1.actaul DOM will get updated 
+                2.componentDidMount will get called for all children like child 1 , child 2, child 3....etc.
+                3.componentDidMount will get called for parent.
+            -Commit phase takes a time as it envolves updation of actual DOM.
+
+        eg. -
+        1.Render Phase
+            Parent construcor called
+            Parent render called
+            First class Child constructor called
+            First class Child render called
+            Second class Child constructor called
+            Second class Child render called
+        2.Commit phase
+            First class Child componentDidMount called
+            Second class Child componentDidMount called
+            Parent componentDidMount called
