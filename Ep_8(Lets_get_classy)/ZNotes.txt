@@ -1,10 +1,10 @@
 1.Class Based Components(old way to create component) but asked alot in interviews.
 
-2.A functional component is JS function which returns JSX .
+2.A functional component is JS function which returns JSX.
 
-3.A class Based component is a class which exrends React.component and which has render method which returns a JSX.
+3.A class Based component is a class which extends React.component and has render method which returns a JSX.
 
-4.Why we use super(props)?
+4.Why we use super(props)? - HW
 
 5.When we are loading functional component that means we are calling that function.
   When we are laoding class based component that means we are creating instance of that class.And once instance is created 

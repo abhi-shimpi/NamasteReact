@@ -8,6 +8,7 @@ function MenuShimmer() {
         {
             menuArray.map((item)=>(
                 <div key={item} className="shimmer-accordian">
+                  <span className="loader-element"></span>
                 </div>      
             ))
         }

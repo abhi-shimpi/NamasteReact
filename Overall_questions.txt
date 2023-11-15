@@ -20,3 +20,13 @@ Notes----------------->
     that function child comp as props then doing some action and passing a argument 
     to that function which get received in same function(like onSearchRest) in
     parent component.
+
+3.Flow of component render 
+   
+   1.Component get called from its parent
+   2.Component's JSX get returned 
+   3.useEffect get called 
+
+   Remember the two approaches 
+   1.Loads -> API(wait for API to fetch data) -> render component with data
+   2.Loads -> Render -> API (make API call and fetch data) -> Render component with data

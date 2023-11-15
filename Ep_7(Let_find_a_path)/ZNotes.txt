@@ -11,12 +11,12 @@
 
 8.Function starting with use is a hook , its a comman convention in react industry
 
-9. Outlet in react-router-dom , link to provide link of page
+9. Outlet in react-router-dom , link to provide link of page internally it is anchor tag.
 
 10. Types of routing 
     -client side  - While in client side routing all these pages are already present in client side as 
-        components so when user clicks on say contact then browser just loads that Contact component and 
-        does not make  Network call only to fetch that page.
+        components so when user clicks on say contact then browser just replaces current component with that Contact component and 
+        does not make any Network call only to fetch that page.
     -server side - In server side routing , say we have home page,contact page, about page 
         Now when we want to go to contact page then browser will make an API call to fetch that page from 
         server. It will refresh whole page.
@@ -31,3 +31,7 @@
 14.Query params - useParams hook
 
 15. https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode -IMP
+
+16.https://www.dhiwise.com/post/understanding-the-importance-of-the-useeffect-dependency-array-in-react
+
+17.https://reactrouter.com/en/main https://formik.org/

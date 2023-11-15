@@ -15,6 +15,8 @@ export const RestaurentMenu = () => {
     const [restDetails,setRestDetails] = useState({});
     const [offerDetails,setOfferDetails] = useState([]);
 
+    console.log(useState())
+
     useEffect(()=>{
         fetchData();
     },[])
