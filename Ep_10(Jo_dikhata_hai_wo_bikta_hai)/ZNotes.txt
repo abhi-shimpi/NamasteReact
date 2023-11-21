@@ -1,0 +1,10 @@
+1.Different ways to write css
+  -Normal css 
+  -scss / setRestDetails
+  -MUI
+  -Ant design
+  -styeled component
+  -Chakra UI
+
+-PostCssRc is a way by which our parcel understands what has written with tailwind or to read tailwind.
+

@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React, { Children, Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import HeaderComponent from "./components/HeaderComponent";
 import { element, obj1 } from "./components/HeaderComponent";
@@ -8,6 +8,7 @@ import About from "./components/About";
 import { Contact } from "./components/Contact";
 import { Error } from "./components/Error";
 import { RestaurentMenu } from "./components/RestaurentMenu.js";
+// import Grocery from "./components/Grocery";
 /* 
 1. Header
   -Logo
@@ -31,6 +32,10 @@ const App = () => (
   </div>
 );
 
+const Grocery = lazy(()=>{
+  return import("./components/Grocery")
+});
+
 // Routes
 const appRouter = createHashRouter(
   [
@@ -50,6 +55,13 @@ const appRouter = createHashRouter(
         {
           path: '/contact',
           element: <Contact />
+        },
+        {
+          path: '/grocery',
+          element: 
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Grocery/>
+          </Suspense>
         },
         {
           path: '/restaurant/:resId',

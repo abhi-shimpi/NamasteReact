@@ -1,13 +1,14 @@
-import React, { Children } from "react";
+import React, { Children, Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComponent from "./components/HeaderComponent";
-import { element, obj1 } from "./components/HeaderComponent";
-import { RestaurantContainer } from "./components/RestaurantContainer";
+import HeaderComponent from "./src/components/HeaderComponent";
+// import { element, obj1 } from "./components/HeaderComponent";
+import { RestaurantContainer } from "./src/components/RestaurantContainer";
 import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./components/About";
-import { Contact } from "./components/Contact";
-import { Error } from "./components/Error";
-import { RestaurentMenu } from "./components/RestaurentMenu.js";
+import About from "./src/components/About";
+import { Contact } from "./src/components/Contact";
+import { Error } from "./src/components/Error";
+import { RestaurentMenu } from "./src/components/RestaurentMenu.js";
+// import Grocery from "./components/Grocery";
 /* 
 1. Header
   -Logo
@@ -25,11 +26,15 @@ import { RestaurentMenu } from "./components/RestaurentMenu.js";
 // console.log(element,obj1)
 
 const App = () => (
-  <div className="homepage">
+  <div className="no-underline text-inherit">
     <HeaderComponent />
     <Outlet />
   </div>
 );
+
+const Grocery = lazy(()=>{
+  return import("./src/components/Grocery")
+});
 
 // Routes
 const appRouter = createHashRouter(
@@ -50,6 +55,13 @@ const appRouter = createHashRouter(
         {
           path: '/contact',
           element: <Contact />
+        },
+        {
+          path: '/grocery',
+          element: 
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Grocery/>
+          </Suspense>
         },
         {
           path: '/restaurant/:resId',

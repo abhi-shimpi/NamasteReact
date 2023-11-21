@@ -1,0 +1,2 @@
+1.Higher order components 
+    - Which takes component as input and return component as output.

@@ -1,0 +1,46 @@
+1.Single responsibility priciple
+    The idea behind the SRP is that every class, module, or function in a
+     program should have one responsibility/purpose in a program. 
+     As a commonly used definition, "every class should have only one reason to change".
+    - If you don't follows SRP and write all functionalities in only one file then as 
+        your code base grows maintaining it and testing each and every functionality 
+        becomes harder and it also reduces reusability .
+
+2.Modularity - Breaking down your code into small small modules 
+    so that your code is maintainable,reusable and more testable
+
+3.Think in contract form like 
+    - What our hook is getting and what we giving as an output?
+    - How ?
+    - Why ?
+
+4.Bundler 
+    - Converts our js , css and assets into a single file .
+    - This is advantageous bcz we do need to load lot of file on browser. Will load 
+        single file .
+    -It helps to optimize your application for production. It reduces the number 
+        of HTTP requests the browser has to make,
+    - So suppose our app has 1000 of components then size of that js file will grows 
+        and our app will take much time to laod.
+    
+    -What if we don't do bundling of our application then we need load 1000 of files 
+        and it will also take much time.
+
+    -So both options are not good. 
+    -So what we can do , we make small small bundles of these files.This process is known
+     as 
+        -chunking
+        -code splitting
+        -lazy loading
+        -dynamic bundling
+        -
+    
+
+
+https://www.freecodecamp.org/news/solid-principles-single-responsibility-principle-explained/
+https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event
+
+https://legacy.reactjs.org/docs/hooks-rules.html
+
+
+

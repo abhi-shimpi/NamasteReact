@@ -51,7 +51,7 @@ this.setState({count:2}) -> so here it will only update passed variable value an
                 -because in render phase it will trigger reconciallition algorithm by diffing between 
                     two VDOM and finalizing VDOM.
                 -As in next phase actual DOM will get updated and updation of atual DOM is very expensive task.
-                -So in render phase itself react diff algo finalizes VDOM to update actual DOM.
+                -So in render phase itself react diff algo finalizes VDOM so that it can update actual DOM in commit phase.
         2.Commit phase -
             -In commit phase,
                 1.actaul DOM will get updated 
@@ -71,3 +71,63 @@ this.setState({count:2}) -> so here it will only update passed variable value an
             First class Child componentDidMount called
             Second class Child componentDidMount called
             Parent componentDidMount called
+
+    Mount phase ----->
+        Parent construcor called
+        Parent render called
+        First class Child constructor called
+        First class Child render called
+        First class Child componentDidMount called
+        Parent componentDidMount called
+    Update Phase ---->
+        First class Child render called
+        First class Child componentDidUpdate called
+
+    Mount Phase --->
+        - constructor (dummy)
+        - state(dummy)
+        - render()  (with dummy data)
+        - componentDidMount (update state variables)
+    
+    Update Phase --->
+        - render()  (with uodated data)
+        - componentDidUpdate called
+
+    -Mounting menas showing component on UI
+    -UnMounting means removing component from UI
+
+    -1. Constructor of class called
+        2. render method of class called
+        3. componentDidMount of class called
+        4. componentDidUpdate of class called
+        5. componentWillUnmount of class clled
+
+10. You need to take care of every single line of code you write that what make you Snr. developer
+
+11. To know about use of componentWillUnmount() 
+    constructor() {
+        super()
+
+        setTimeInterval(()=>{
+            console.log("React OP")
+        },1000);
+    }
+
+    so we will observe that when this class get instanciated then 
+    constructor will get called and and time interval will be set .
+    Here even if we go to other page then also it will continue printing 
+    "React OP" . This is happening because we are not clearing the interval.
+    Here componentWillUnmount comes in picture. componentWillUnmount will get called when 
+    we go from current component to other component.
+    So here we can clear interval.
+
+    -This can be achieved in functional component in useEffect.
+        useEffect(()=>{
+            const intervalId  =  setTimeInterval(()=>{
+                console.log("React OP")
+            },1000);
+
+            return(()=>{
+                clearInterval(intervalId);
+            })
+        },[]);
