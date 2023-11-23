@@ -12,7 +12,7 @@ const useRestaurentContainer = () =>{
     },[])
 
     const fetchData = async () =>{
-        console.log("FetchData called")
+        // console.log("FetchData called")
 
         const data = await fetch(REST_API);
         const jsonData = await data.json();

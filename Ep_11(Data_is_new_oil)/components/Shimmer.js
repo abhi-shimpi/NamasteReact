@@ -1,4 +1,5 @@
-export const Shimmer = () => {
+export const Shimmer = ({children}) => {
+    // console.log(children)
     return (
         <>
             <div className="shimmer-card">

@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import User from "./User";
 import {UserClass} from "./UserClass";
 import {Component} from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor() {
@@ -18,6 +19,16 @@ class About extends Component {
     return (
       <>
          <h1>About</h1>
+         <h3>User : {
+            <UserContext.Consumer>
+             {
+               (data) => (
+                  // console.log(data)
+                  <span>{data.loggedInUser}</span>
+               )
+             }
+            </UserContext.Consumer>
+          }</h3>
          <UserClass name={"First class 1"} location={"amalner class"} contact={"abhi@gmail.com class"}/>
          <Outlet/>
          {/* <UserClass name={"Second class"} location={"amalner class"} contact={"abhi@gmail.com class"}/> */}

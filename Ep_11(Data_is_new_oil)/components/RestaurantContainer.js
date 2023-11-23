@@ -22,10 +22,9 @@ export const RestaurantContainer = () => {
     const [keyData,setKeyData] = useState('loadData')
 
     const respData = useRestaurentContainer();
-    console.log("RespData in RestCOntainer",respData);
+    // console.log("RespData in RestCOntainer",respData);
     useEffect(()=>{
         setListOfRestaurents(respData);
-        console.log("useEffect in RestCOntainer")
         // console.log("listOfRestaurents",listOfRestaurents);
     },[respData])
 
@@ -61,7 +60,7 @@ export const RestaurantContainer = () => {
 
     return (
         <div className="restaurant-container">
-            {console.log("RestCOntainer rendered",keyData)}
+            {/* {console.log("RestCOntainer rendered",keyData)} */}
             {/* Here we are passing a function as props to it child component and in child component 
                 we are passing a argument to parent onSearchrest function
             */}

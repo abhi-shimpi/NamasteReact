@@ -1,4 +1,4 @@
-import React, { Children, Suspense, lazy } from "react";
+import React, { Children, Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import HeaderComponent from "./components/HeaderComponent";
 import { element, obj1 } from "./components/HeaderComponent";
@@ -8,6 +8,8 @@ import About from "./components/About";
 import { Contact } from "./components/Contact";
 import { Error } from "./components/Error";
 import { RestaurentMenu } from "./components/RestaurentMenu.js";
+import UserContext from "./utils/UserContext";
+import UserContextDummy from "./utils/UserContextDummy";
 // import Grocery from "./components/Grocery";
 /* 
 1. Header
@@ -24,17 +26,36 @@ import { RestaurentMenu } from "./components/RestaurentMenu.js";
 
 */
 // console.log(element,obj1)
-
-const App = () => (
-  <div className="homepage">
-    <HeaderComponent />
-    <Outlet />
-  </div>
-);
-
-const Grocery = lazy(()=>{
+const Grocery = lazy(() => {
   return import("./components/Grocery")
 });
+
+const App = () => {
+
+    const [userName, setUserName] = useState("");
+
+    // authentication
+    useEffect(() => {
+      // Make API call to authenticate user
+      const data = {
+        name: "Abhishek Shimpi"
+      }
+      setUserName(data.name);
+    },[])
+
+    return (
+      // Outside loggedInUser will be Default user
+      <UserContext.Provider value={{loggedInUser:userName}}>
+        <div className="homepage">
+        <UserContextDummy.Provider value={{loggedOutUser:"Akshay"}}>
+          <HeaderComponent />
+        </UserContextDummy.Provider>
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    )
+}
+
 
 // Routes
 const appRouter = createHashRouter(
@@ -58,10 +79,10 @@ const appRouter = createHashRouter(
         },
         {
           path: '/grocery',
-          element: 
-          <Suspense fallback={<h2>Loading...</h2>}>
-            <Grocery/>
-          </Suspense>
+          element:
+            <Suspense fallback={<h2>Loading...</h2>}>
+              <Grocery />
+            </Suspense>
         },
         {
           path: '/restaurant/:resId',

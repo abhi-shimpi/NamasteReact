@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
 function useOnlineStatus() {
   const  [onlineStatus,setOnlineStatus] = useState(true);
 //   let onlineStatus = "true";
-  console.log("outside",onlineStatus);
+  // console.log("outside",onlineStatus);
 
   useEffect(()=>{
     window.addEventListener('offline',()=>{
@@ -23,7 +23,7 @@ function useOnlineStatus() {
         // onlineStatus = "true";
     })
 
-    console.log("Inside",onlineStatus);
+    // console.log("Inside",onlineStatus);
   },[onlineStatus])
 
   return onlineStatus;

@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import cart_img from '../assets/images/cart.png'
 import user_img from '../assets/images/user.webp'
 import { Link } from 'react-router-dom';
+import UserContext from '../utils/UserContext';
+import UserContextDummy from '../utils/UserContextDummy';
 
 export const NavItemsComponent = () => {
     // let authenticityBtn = "Login"
@@ -10,6 +12,8 @@ export const NavItemsComponent = () => {
     useEffect(()=>{
         // console.log("UseEfect in NavItemsComponent")
     },[authenticityBtn])
+
+    const data = useContext(UserContextDummy);
 
     return (
         <div className="nav-items font-600">
@@ -29,8 +33,11 @@ export const NavItemsComponent = () => {
                 <li className="img-height-width pointer">
                     <img src={cart_img} width="100%" height="100%" />
                 </li>
-                <li className="img-height-width pointer">
+                {/* <li className="img-height-width pointer">
                     <img src={user_img} width="100%" height="100%" />
+                </li> */}
+                <li>
+                    {data.loggedOutUser}
                 </li>
                 <li>
                     <button className='login-btn pointer' onClick={() => {

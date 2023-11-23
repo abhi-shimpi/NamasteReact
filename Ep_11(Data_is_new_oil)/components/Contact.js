@@ -1,7 +1,11 @@
-export const Contact = () =>{
+import Main from "./TestContext/Main"
+export const Contact = () => {
     return (
-        <h1>
-            Contact us
-        </h1>
+        <div>
+            <h1>
+                Contact us
+            </h1>
+            <Main></Main>
+        </div>
     )
 }

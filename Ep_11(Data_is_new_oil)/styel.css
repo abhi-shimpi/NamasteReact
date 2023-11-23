@@ -396,9 +396,31 @@ h1, h2, h3, h4, p {
     flex-direction: column;
 }
 
+.menu-items-animation {
+    opacity: 1;
+    /* height: 0px; */
+    /* transition:all 4s ease-in-out; */
+    /* animation: itemList 1s 1 ease-in-out; */
+}
+
+@keyframes itemList {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    50% {
+        opacity: 0.5;
+        height: 300px;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
+
 .accordian {
     margin-bottom: 10px;
-    border-bottom: 3px solid #ebeef8;
+    border-bottom: 10px solid #ebeef8;
 }
 
 .accordian-title {
@@ -425,11 +447,14 @@ h1, h2, h3, h4, p {
     justify-content: space-between;
 }
 
+.menu-header {
+    width: 70%;
+}
+
 .menu-discp {
     margin-top: 14px;
     line-height: 1.3;
     color: rgba(40,44,63,.45);
-    width: 70%;
     letter-spacing: -.3px;
     font-size: 1rem;
 }
@@ -437,8 +462,21 @@ h1, h2, h3, h4, p {
 .menu-image {
     width: 90px;
     height: 90px;
+    position: relative;
 }
 
+.add-menu-btn {
+    color: #000;
+    background-color: #b8e9e9;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    left: 22px;
+    display: flex;
+    bottom: -10px;
+    border: none;
+    gap: 2px;
+}
 
 .offers::-webkit-scrollbar {
     display: none;
@@ -450,3 +488,39 @@ h1, h2, h3, h4, p {
     padding: 10px;
     border: 1px solid;
 }
+
+/* discount-label */
+.discount-label {
+    position: absolute;
+    padding: 8px;
+    background-color: rgb(91, 90, 89);
+    color:white;
+}
+
+.triangle-topright {
+    position: absolute;
+    top: 34px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid rgb(91, 90, 89);
+    border-left: 20px solid transparent;
+  }
+
+  .card-with-discount {
+    position: relative;
+  }
+
+
+
+  /* Context */
+  .section {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+  
+  .fancy {
+    border: 4px dashed pink;
+  }
+  

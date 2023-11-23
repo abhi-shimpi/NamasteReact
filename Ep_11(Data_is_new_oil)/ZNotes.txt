@@ -1,2 +1,105 @@
 1.Higher order components 
     - Which takes component as input and return component as output.
+    - Used for enhancing purpose
+    - We don't modify component which is being passed as input we just enhance it
+
+2.Controlled and uncontrolled components.
+
+3.App has two layer UI and data layer . UI layer is powered by data layer(which consist of props, variables,states)
+
+4.Very good at logic of data layer
+
+5.Divide your code in component wherever possible specificially when your code of single component is
+    going above 100-110 lines. 
+    -It makes debugging easy and fast.
+
+6.Controlled component - 
+    -Component which is Controlled by its parent and child whose states are Controlled by its parent is called Controlled c.
+       
+    -uncontrolled component is component whose states are Controlled by itself and has no dependency of states on its parent.
+        It is controlling itself.
+        -eg. In our project MenuCategories has its own state and parent is not controlling that state so it is uncontrolled 
+            component.
+
+7.Lifting state up - Means state of children is Controlled by its parent 
+
+8.Props Drilling - passing props from parent to children to their children to their children so that data is needed in lastmost child
+
+9.React context -to avoid props Drilling.
+
+10.-<CardContainer {...props} />:
+
+    This syntax uses the spread operator (...) to pass all the properties of the props object as individual props to the CardContainer component.
+    It essentially "spreads" the properties of the props object as separate props. For example, if props contains { prop1: 'value1', prop2: 'value2' }, 
+    then <CardContainer {...props} /> is equivalent to <CardContainer prop1='value1' prop2='value2' />.
+    
+  -<CardContainer resData={...props} />:
+
+    In this case, all the properties of the props object are passed as a single prop named resData to the CardContainer component.
+    It explicitly assigns all the properties of props to the resData prop. For example, if props contains { prop1: 'value1', prop2: 'value2' }, 
+    then <CardContainer resData={{ prop1: 'value1', prop2: 'value2' }} />.
+
+11. Read about props drilling
+
+12.React context 
+    -So we want a data in component which is at leaf position & we need to pass that data from rootlevel parent 
+        to its children then to its children then to its children.This is very hectic.
+    -To avoid this problem react context comes into picture . It is like a global place where we kept essential data 
+        from which any component can access that data wheather it is parent or child at any level.
+    -Many ways to avoid Props drilling
+    -We can create context by using createContext method provided by react
+            const UserContext = createContext({
+                loggedInUser : "Default User"
+            })
+    -There two ways we can acces UserContext 
+        - useContext (hook)
+        - UserContext(context name).Consumer (used in class)
+
+    -TypeError: Cannot read properties of undefined (reading 'loggedOutUser')
+        If you are not providing value for UserContext.Provider then it will throw error
+    -https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components
+
+
+13.Props drilling 
+    -There is data which is in parent component which is at top of tree and 
+        we need this data in child component which is at very deep at leaf level of the tree.
+        So we need to pass this data to through props through component which is very inconvinient and verbose 
+        as many components may not need that data still they are passing that data as props.
+    -Here context comes into picture.Context lets the parent component make some information available to any component 
+        in the tree below it—no matter how deep—without passing it explicitly through props.
+    -https://react.dev/learn/passing-data-deeply-with-context#the-problem-with-passing-props
+
+14.Lifting state up 
+    -To collect data from multiple children, or to have two child components communicate with each other, declare 
+        the shared state in their parent component instead. The parent component can pass that state back down to 
+        the children via props. This keeps the child components in sync with each other and with their parent.
+    -Eg. -If we take example of tic-tac-toe game each square of Board can have its own state but to declare winner of game 
+            parent which is Board need to know state of each and every child component.
+        -Here we will take out state of each component and declare that state in Board component so that parent Board will
+            know state of each children. This is known as lifting state up.
+        -Also we doing same in Accordian example.
+    -Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it 
+        to their closest common parent, and then pass it down to them via props. This is known as lifting state up
+    -https://react.dev/learn/tutorial-tic-tac-toe#lifting-state-up
+
+15.Controlled and Uncontrolled components 
+    -It is common to call a component with some local state “uncontrolled”. For example, the original Panel component with an isActive 
+        state variable is uncontrolled because its parent cannot influence whether the panel is active or not.
+
+    -In contrast, you might say a component is “controlled” when the important information in it is driven by props rather than its 
+        own local state. This lets the parent component fully specify its behavior. The final Panel component with the isActive prop 
+        is controlled by the Accordion component.
+
+    -Uncontrolled components are easier to use within their parents because they require less configuration. 
+        But they’re less flexible when you want to coordinate them together. 
+        Controlled components are maximally flexible, but they 
+        require the parent components to fully configure them with props.
+
+    -In practice, “controlled” and “uncontrolled” aren’t strict technical terms—each component usually has some mix of both local 
+        state and props. However, this is a useful way to talk about how components are designed and what capabilities they offer.
+
+    -When writing a component, consider which information in it should be controlled (via props), and which information 
+        should be uncontrolled (via state). But you can always change your mind and refactor later.
+
+https://react.dev/learn/passing-data-deeply-with-context
+https://react.dev/reference/react/useContext - Remaining
