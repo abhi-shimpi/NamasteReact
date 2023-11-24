@@ -1,0 +1,104 @@
+1.Manage states and data using redux
+
+2.Redux is not mandatory . React and Redux both are different library.
+    Redux is not only library for state management.
+    Another one is zustand
+
+3.There are two libraries that redux provides us 
+    -React-Redux
+    -Redux toolkit
+
+4.  -Redux store is whole big object which is kept in cetral place.
+    -Any component can access that data from store.
+    -It is absolutely fine to store all data in redux store.
+    -But our RS does become slumsy we make slices
+    -Slices -> To kepp data seperate we logical partition , these partition are slices.
+    -Click add menu btn -> DIspatches action -> call a function -> function will make changes into slices.
+    -This function is called Reducer.
+    -Jargon -> dispatch an action , Reducer function
+    -When you click on add byn -> It dispatches an action -> which calls Reducer function -> Which updates slice of redux store.
+    -Read data 
+        -Read data from slice into cart -> for that we use Selector
+        -Cart component will subscribe to cart slice(store) using Selector this means it is 
+            in sync with that store .Its will automagically change data in cart component
+            as soon as data in store changes.
+    
+    -Writing a data 
+        Click on Add + (btn) -> dispatch an action -> call a Reducer function -> updates a slice of store 
+    
+    -Read a data
+        cart component <- (Cart component)subscribed to store using Selector <- store slice will change
+    -Curocity keep alive
+
+    - Building store -> RTK job
+      Providing this store -> react-redux job (Bridging between store and app)
+
+    -Actions are small API to communicate with Redux store. 
+        eg. -Add item , remove item
+
+    -App has also Reducer to modify whole store and that reducer contains resucers of thier slices.
+
+    - 1.Created app store using ConfigureStore method
+            - This method takes an object which contains reducer.
+            - This reducer contains all slices.
+            - App has this reducer to update appStore.
+      2.Created slice named cart using createSlice() which takes an object which contains   
+            - name of slice 
+            - initial state of slice data
+            - reducer object which contains dispatch actions mapped with reducer actions
+      3.Provided this store to our app using Provider
+            -we can Provide this app in whichever component needed.
+    -Complete flow
+        1.onClick of add btn - we are dispatching an action 
+              const dispatch = useDispatch();
+
+                const handleAddItem =() => {
+                    // Dispatch  an action 
+                    //  {action.payLoad  = "pizza"}
+                    dispatch(addItem("pizza"));
+                }
+
+                so here addItem is an action which we written in reducers of cartSlice 
+        2.Reducer function that we have mapped with this action get called 
+                addItem : (state,action)=>{
+                    state.item.push(action.payload);
+                },
+
+                It adds data in item array.
+        3.As we have subscribed to this store , we can mention which slice we want .
+                const cartItems = useSelector((store)=> {
+                    console.log(store.cart.item)
+                    return store.cart.item
+                })
+                Here we are mentioning cart slice which we have mapped in app store as cart : cartSlice.
+        -Untill we provide our store to app we can subscribe to it.
+
+    - // This is very efficient way to subscribe to store 
+        // Here we are selecting only a specific portion of store which item of cart
+        // So cartItems will get updated only when changes that selected part(which is item of cart) will happen 
+        const cartItems = useSelector((store) => store.cart.item)
+
+
+        // While below is very i-effiecient way of subscribing to store 
+        // Because whenever there is small change will happen in store , below store 
+        // will get updated which affects performence of app
+        // const store  = useSelector((store) => store)
+        // const cartItems = store.cart.item
+
+    -reducers -> in slice object while creating slice
+     reducer -> while exporting that slice
+     reducer -> In app store object while configuring store
+
+    -Immer library
+    -Redux dev tools
+    -RTK query
+
+
+Remaining ---->
+1.Increase deacrease functionality in menu and in cart
+2.Adding pop-up while adding menu to cart
+3.Cart Remaining two divs
+4.Pop-up while adding item of another Restaurent
+
+
+https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers#:~:text=Reducers%20are%20functions%20that%20take,%2C%20action)%20%3D%3E%20newState%20.

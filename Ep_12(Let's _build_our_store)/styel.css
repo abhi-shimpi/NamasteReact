@@ -1,0 +1,666 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ebeef8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Global styles */
+.font-600 {
+    font-family:'Courier New', Courier, monospace !important;  
+    font-weight: 600;
+}
+
+.font-500 {
+    font-family:'Courier New', Courier, monospace !important;  
+    font-weight: 500;
+}
+
+.oslogray {
+    color: aliceblue;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.marg-bottom-8 {
+    margin-bottom: 8px;
+}
+
+.pad-10 {
+    padding: 8px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.light-grey {
+    color: #535665;
+}
+
+.light-green {
+    color: #60b246;
+}
+
+
+
+/* Component styles */
+.header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(69, 229, 229);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo img{
+    border-radius: 20%;
+}
+
+.img-height-width {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-items > ul {
+    display:  flex;
+    gap: 25px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-items > ul > li {
+    list-style-type: none;
+}
+
+/* Search Bar */
+.search-bar {
+   width: 40%;
+   height: auto;
+   padding: 10px;
+   margin: 20px 0px;
+   background-color: white;
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-img {
+    width: 40px;
+    height: 30px;
+    border: none;
+    background-color: white;
+}
+
+.search-bar input {
+    height: 25px;
+    width: 80%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: white;
+}
+
+.auto-suggest-div {
+    width: 40%;
+    background-color: rgb(216, 213, 213);
+    position: absolute;
+    top: 15%;
+}
+
+/* Restaurant Container */
+.restaurant-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.restaurant-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    width: 260px;
+    height: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+}
+
+.card:hover {
+    border: 1px solid rgb(168, 167, 167);
+    box-shadow: 1px 2px 10px rgb(168, 167, 167);
+    max-width: 258px;
+
+}
+
+.img-wrapper {
+    width: 250px;
+    height: 180px;
+}
+
+.cusines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Shimer cards */
+/* .shimmer-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+
+.shimmer-card {
+    width: 280px;
+    height: 326px;
+    background-color: #bebbcf;
+}
+
+/* Login btn */
+.login-btn {
+    padding: 10px;
+    background-color: #ebeef8;
+    border: none;
+    border-radius: 4px;
+}
+/* 
+@keyframes shimmer-animation {
+    0% {
+        transform: perspective(200px) translateZ(0);
+    }
+    50% {
+        transform: perspective(200px) translateZ(-5px);
+    }
+    100% {
+        transform: perspective(200px) translateZ(-10px);
+    }
+} */
+
+
+/* Restaurent Menu component */
+
+.rest-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.rest-menu-details{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 10px;
+}
+
+.rest-details-container {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed grey;
+}
+
+.rest-details { 
+    display: flex;
+}
+
+.rest-name {
+    flex: 70%;
+}
+
+.rating-container {
+    flex: 10%;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e9e9eb;
+    box-shadow: 0 1px 5px #f9f9f9;
+    border-radius: 6px;
+    text-align: center;
+    padding: 8px;
+    max-width: 100px;
+    float: right;
+}
+
+.avg-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #e9e9eb;
+}
+
+.rating-img {
+    width: 20px;
+    height: 20px;
+}
+
+.rating-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.delivery_image {
+    width: 18px ;
+    height: 18px ;
+}
+
+.delivery_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.rest-message {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Offers */
+.offers {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.offer-card {
+    min-width: 200px;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid grey;
+}
+
+.deal {
+    font-weight: 600;
+    font-size: .7rem;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding-left: 4px;
+    text-align: center;
+    border-left: 1px solid #e9e9eb;
+}
+
+.offer-details {
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 5px
+}
+
+.offer-header {
+    display: flex;
+    gap: 5px;
+}
+
+.sub-details {
+    display: flex;
+    color: #676e85;
+}
+
+/* Shimmer */
+
+.shimmer-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.shimmer-menu-items {
+    width: 70%;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #bebbcf;
+}
+
+.shimmer-accordian {
+    width: 70%;
+    height: 70px;
+    border-radius: 5px;
+    background-color: #bebbcf;
+}
+
+.loader-element {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #bebbcf;
+    margin-bottom: 2px;
+    overflow: hidden;
+}
+
+.loader-element::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#bebbcf,#cfcfe3,#bebbcf);
+    transform: rotate(130deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left:-100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Menu items */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items-animation {
+    opacity: 1;
+    /* height: 0px; */
+    /* transition:all 4s ease-in-out; */
+    /* animation: itemList 1s 1 ease-in-out; */
+}
+
+@keyframes itemList {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    50% {
+        opacity: 0.5;
+        height: 300px;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+.accordian {
+    margin-bottom: 10px;
+    border-bottom: 10px solid #ebeef8;
+}
+
+.accordian-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+
+.menu-card {
+   margin: 10px;
+   border-bottom: 1px solid #d8d2d2;
+   padding-bottom: 10px;
+}
+
+.veg-classifier {
+    width: 18px;
+    height: 18px;
+    padding: 5px 0px;
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-header {
+    width: 70%;
+}
+
+.menu-discp {
+    margin-top: 14px;
+    line-height: 1.3;
+    color: rgba(40,44,63,.45);
+    letter-spacing: -.3px;
+    font-size: 1rem;
+}
+
+.menu-image {
+    width: 90px;
+    height: 90px;
+    position: relative;
+}
+
+.add-menu-btn {
+    color: #000;
+    background-color: #b8e9e9;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    left: 22px;
+    display: flex;
+    bottom: -10px;
+    border: none;
+    gap: 2px;
+}
+
+.offers::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* User */
+.user-card {
+    padding: 10px;
+    border: 1px solid;
+}
+
+/* discount-label */
+.discount-label {
+    position: absolute;
+    padding: 8px;
+    background-color: rgb(91, 90, 89);
+    color:white;
+}
+
+.triangle-topright {
+    position: absolute;
+    top: 34px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid rgb(91, 90, 89);
+    border-left: 20px solid transparent;
+  }
+
+  .card-with-discount {
+    position: relative;
+  }
+
+
+
+  /* Context */
+  .section {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+  
+  .fancy {
+    border: 4px dashed pink;
+  }
+  
+  /* Cart */
+  .cart-items-count {
+    position: absolute;
+    top: 5px;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 50%;
+  }
+
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px;
+  }
+
+  .cart-items {
+    width: 60%;
+    background-color: white;
+  }
+
+  /* Add menu */
+  .add-menu-updated-btn {
+    color: black;
+    background-color: #b8e9e9;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    left: 22px;
+    display: flex;
+    bottom: 26px;
+    border: none;
+    gap: 8px;
+  }
+
+
+  /* Cart */
+  .cart-items-details {
+    width: 20%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    height:auto;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .restaurent-details {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .restaurent-image {
+    width: 65px;
+    height: 65px;
+  }
+
+  .restaurent-name {
+    height: 65px;
+    margin-left: 5px;
+    position: relative;
+  }
+
+  .restaurent-name ::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background: #282c3f;
+    width: 40px;
+    height: 2px;
+  }
+.itemlist-and-bill-container {
+    margin: 10px 0px;
+    overflow-y: auto;
+}
+
+  /* Cart items */
+  .itemslist {
+    display: flex;
+    /* gap: 20px; */
+    justify-content: space-between;
+    padding: 15px 0px;
+  }
+
+.is-veg-image {
+    width: 15px;
+    height: 15px;
+}
+
+.item-name {
+    width: 55%;
+    font-size: medium
+}  
+
+.item-count {
+    border: 1px solid #535665;
+    justify-content: space-around;
+    gap: 9px;
+    padding: 8px;
+    display: flex;
+    height: 11px;
+    align-items: center;
+}
+
+/* billing-details */
+.billing-details {
+    /* padding: 15px; */
+    border-bottom: 2px solid;
+    margin: 10px 0px
+}
+
+.bill-item {
+    display: flex;
+    justify-content: space-between;
+    color: #535665;
+    padding: 10px 0px;
+    position: relative;
+    /* border-bottom: 1px solid #c9cad3; */
+}
+
+.to-pay {
+    display: flex;
+    justify-content: space-between;
+}
+
+ 
