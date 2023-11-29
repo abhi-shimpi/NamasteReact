@@ -1,0 +1,92 @@
+{
+    "id": "70246",
+    "name": "Starbucks Coffee",
+    "cloudinaryImageId": "0c958153eeb436db6d515ca36e47e8a4",
+    "locality": "7th Block",
+    "areaName": "Koramangala",
+    "costForTwo": "₹400 for two",
+    "cuisines": [
+        "Beverages",
+        "Cafe",
+        "Snacks",
+        "Desserts",
+        "Bakery",
+        "Ice Cream"
+    ],
+    "avgRating": 4.3,
+    "feeDetails": {
+        "restaurantId": "70246",
+        "fees": [
+            {
+                "name": "BASE_DISTANCE",
+                "fee": 3000
+            },
+            {
+                "name": "BASE_TIME"
+            },
+            {
+                "name": "ANCILLARY_SURGE_FEE"
+            }
+        ],
+        "totalFee": 3000
+    },
+    "parentId": "195515",
+    "avgRatingString": "4.3",
+    "totalRatingsString": "5K+",
+    "sla": {
+        "deliveryTime": 18,
+        "lastMileTravel": 1.4,
+        "serviceability": "SERVICEABLE",
+        "slaString": "18 mins",
+        "lastMileTravelString": "1.4 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2023-11-27 23:59:00",
+        "opened": true
+    },
+    "badges": {
+        "textExtendedBadges": [
+            {
+                "iconId": "guiltfree/GF_Logo_android_3x",
+                "shortDescription": "options available",
+                "fontColor": "#7E808C"
+            }
+        ]
+    },
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {
+                "badgeObject": [
+                    {
+                        "attributes": {
+                            "description": "",
+                            "fontColor": "#7E808C",
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "aggregatedDiscountInfoV3": {
+        "header": "50% OFF",
+        "subHeader": "UPTO ₹100"
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+}

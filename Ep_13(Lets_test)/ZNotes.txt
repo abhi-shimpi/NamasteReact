@@ -1,0 +1,104 @@
+1.Manual Testing
+2.Writing test cases
+    3 types of Testing(developer)
+        -Unit Testing
+            -You test your react component in isolation
+            -Tetsting a specific component/unit 
+        -Integration Testing
+            -Testing Integration of component
+            -When component communicate with each other
+            -Testing flow 
+        -E2E Testing
+            -cypress
+            -selenium
+
+3.Here we using babel for jest.As we know parcel also uses babel internally. So parcel configuration with babel 
+    will be conflicting with babel configuration.
+    -
+4. -React testing library
+   -jest
+   -babel
+   -parcel 
+
+5.npx jest --init 
+    -It will create new configuration file for jest 
+
+6.jsdom - 44.0.0
+    -When our test cases run they dont run on browser so they need a runtime 
+        environment to run.
+    -jsdom parses and interacts with html like browser do 
+
+7.Header.test.js
+  Header.test.ts
+  Header.spec.js
+  Header.spec.ts
+
+  These pattern will be matched
+  - __ ->dunder  -> dunder test
+
+  Adding config for @babel/preset-react  for JSX
+    -Its helping testing library to convert jsx code into HTML so that it can 
+        understand it properly 
+
+-Indeed, you're correct! Jest is a popular JavaScript testing framework developed by Facebook. It is widely used for testing JavaScript code, including applications, libraries, and other projects. Jest is known for its simplicity, speed, and developer-friendly features.
+
+    Here are some key features of Jest:
+
+    1. **Zero Configuration:** Jest comes with sensible defaults and requires minimal configuration, making it easy to set up and start using for testing JavaScript projects.
+
+    2. **Fast and Parallelized:** Jest is designed to run tests quickly, and it can parallelize test runs across multiple processes, optimizing the testing process for efficiency.
+
+    3. **Snapshot Testing:** Jest introduces the concept of snapshot testing, where it captures the output of a component or function and compares it to a stored "snapshot" to ensure that it remains consistent over time.
+
+    4. **Mocking:** Jest provides built-in support for mocking, allowing developers to replace parts of the code with mock functions or objects to isolate the unit of code being tested.
+
+    5. **Code Coverage:** Jest can generate code coverage reports, helping developers understand how much of their codebase is covered by tests.
+
+    6. **Watch Mode:** Jest includes a watch mode that monitors files for changes and automatically reruns tests, making the development and testing workflow more interactive.
+
+    7. **Built-in Expectations:** Jest comes with a set of built-in matchers and expectations, making it easy to write assertions in tests.
+
+    8. **Integration with Babel and TypeScript:** Jest seamlessly integrates with Babel for ECMAScript features and TypeScript for type-checking.
+
+    Overall, Jest has become a go-to choice for many JavaScript developers due to its simplicity, speed, and comprehensive feature set, making the process of writing and maintaining tests more enjoyable and efficient.
+
+-"Framework-agnostic" refers to a characteristic of software tools or libraries that are not tied to or dependent on a specific framework. A framework-agnostic tool can be 
+    used independently of the particular framework or technology 
+    stack you are working with. This flexibility is valuable because it allows you to use the tool in various contexts, 
+    regardless of the underlying framework or environment
+
+- getByRole or getBy... -> gives you single item
+  getAllByRole - Gives you multiple items
+
+  These functions return a React element 
+  JSX -> A react element -> a Object
+
+-describe block for wrapping multiple testcases
+    test - it -> both are alias
+
+-const img  = screen.getByAltText(/cart-image/); -> can also use regex
+
+- To automatically run test cases we can use write 
+    "watch-test" : "jest --watch"
+
+-Whenever you are using fetch and state management wrap your render method into act function 
+
+- When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+
+-Creating a mock function like fetch 
+    -We run our test cases in jsdom and it provides browser like environment , not exact features of    
+        browser.So we can't make api calls inside test jsdom environment.
+    -So we need to make a fake fetch() function which returns a Promise within which we call json  function
+        which also return a Promise.
+
+-act function basically comes from react-dom/test-utils
+
+-toBeInTheDocument -> in @testing-library/jest-dom
+
+-https://medium.com/simform-engineering/react-testing-library-vs-jest-2a204f521b97#:~:text=To%20wrap%20it%20up%2C%20our,various%20testing%20needs%20in%20React.
+-https://medium.com/simform-engineering/react-testing-library-vs-jest-2a204f521b97#:~:text=To%20wrap%20it%20up%2C%20our,various%20testing%20needs%20in%20React.
