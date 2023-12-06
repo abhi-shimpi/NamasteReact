@@ -30,3 +30,12 @@ Notes----------------->
    Remember the two approaches 
    1.Loads -> API(wait for API to fetch data) -> render component with data
    2.Loads -> Render -> API (make API call and fetch data) -> Render component with data
+
+4.You should follow SRP. That your component should only one responsibility.
+    -Like CardContainer has only one responsibility of showing card data.
+    -But what i was doing in MenuItems previously that i am looping over data in component itself so this 
+        MenuItems can't be reused by Cart component for showing item data.
+        Insted i should do mapping over items in parent component and pass a object to MenuItems component.
+        This increases reusability.
+    -So keep in mind that whenever you need to do mapping in component itself , check if same mapping can 
+     be done in parent of that component or not.

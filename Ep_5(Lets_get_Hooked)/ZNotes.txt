@@ -45,13 +45,13 @@ Main Difference :
 
 8.Reconcilliation algorithm (React fibre)
 
-9.Virtual DOM  - It is representation of actual DOM.
+9.Virtual DOM  - It is a js representation of actual DOM.
     -Just console log any component . You will get an object which is nothing but a virtual DOM 
         which react keeps with it.
 
 10.Why react is fast 
-    -React has virtual DOM .I has diffing algorithm which can efficiently do DOM Munipulation and  which can quickly find out 
-        Difference between two virtual DOM and update UI.
+    -React has virtual DOM .It has diffing algorithm  which can quickly find out 
+        Difference between two virtual DOM ,which can efficiently do DOM Munipulation and update UI.
 
 11.React keep an eye state variable and contineously checks if it has changes or not and as soon as we call setListOfRestaurents
     function reacts diff algorithm start working and find out difference between previous VDOM and current VDOM.
