@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 // import user_img from '../assets/images/user.webp'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import UserContextDummy from '../utils/UserContextDummy';
 import { useSelector } from 'react-redux';
 
@@ -26,7 +26,7 @@ export const NavItemsComponent = () => {
         <div className="nav-items font-600">
             <ul>
                 <li className='pointer'>
-                    <Link to={'/'}>Home</Link>
+                    <Link to={'/'} >Home</Link>
                 </li>
                 <li className='pointer'>
                     <Link to={'/about'}>About Us</Link>
